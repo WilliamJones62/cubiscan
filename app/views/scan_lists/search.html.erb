@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_with url: scan_lists_find_path, local: true, method: 'get' do |f| %>
+  <%= f.label:part_code, 'Part code:' %>
+  <%= f.text_field :part_code, id: :part_code %>
+  <%= f.submit "Submit" %>
+<% end %>

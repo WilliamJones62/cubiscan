@@ -1,0 +1,33 @@
+<%= form_with(model: scanlist, local: true) do |form| %>
+  <% if scanlist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scanlist.errors.count, "error") %> prohibited this scanlist from being saved:</h2>
+
+      <ul>
+      <% scanlist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th> Part </th>
+        <th> Description </th>
+        <th> Unit of measure </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= @part_code %> </td>
+        <td> <%= @part_desc %> </td>
+        <td> <%= @uom %> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>

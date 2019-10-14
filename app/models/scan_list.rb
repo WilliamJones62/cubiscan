@@ -1,0 +1,2 @@
+class ScanList < ApplicationRecord
+end
